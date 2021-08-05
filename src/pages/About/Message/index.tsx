@@ -10,7 +10,6 @@ function Message(props:any) {
             {id: 3, name: 'guanyu'},
         ]
     }
-
     const paramsPush = (id:number,name:string) => {
         props.history.push(`/about/message/info/${id}/${name}`)
     }
@@ -27,14 +26,14 @@ function Message(props:any) {
                         //search传递参数
                         // <Link key={obj.id} replace to={`/about/message/info?id=${obj.id}&name=${obj.name}`}>message001</Link>
                         //state传递参数
-                        <>
-                            <Link key={obj.id} replace to={{
+                        <div key={obj.id}>
+                            <Link replace to={{
                                 pathname: '/about/message/info',
                                 state: {id: obj.id, name: obj.name}
                             }}>message001</Link>
-                            <button key={obj.name} onClick={() => {paramsPush(obj.id,obj.name)}}>push</button>
-                            {/*<button key={1} onClick={() => {paramsReplace(obj.id,obj.name)}}>replace</button>*/}
-                        </>
+                            <button onClick={() => {paramsPush(obj.id,obj.name)}}>push</button>
+                            <button onClick={() => {paramsReplace(obj.id,obj.name)}}>replace</button>
+                        </div>
                     )
                 })
             }
