@@ -12,14 +12,14 @@ class Info extends Component<any, any> {
 
     render() {
         //params
-        // const {match: {params: {id, name}}} = this.props
+        const {match: {params: {id, name}}} = this.props
 
         //search
         // const {location: {search}} = this.props
         // const {id, name} = qs.parse(search.slice(1))
 
         //state
-        const {id, name} = this.props.location.state || {}
+        // const {id, name} = this.props.location.state || {}
         const text = this.state.personInfoArr.find((obj) => {
                return obj.id === Number(id)
         }) || { content: ''}
